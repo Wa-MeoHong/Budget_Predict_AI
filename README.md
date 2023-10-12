@@ -16,3 +16,9 @@ Autogluon은 학습 시, Tabular데이터셋을 활용해야 한다.
 
 ## 3. 예측 과정
 #### 1) 데이터베이스를 불러오기
+* 먼저 데이터셋을 불러온다. 또한, 불러오는 과정에서 필요없는 열 __"Unnamed: 0"__ 를 삭제한다<br>
+![Picture1](./Pictures/Datasetload.png)
+* 그 후, 데이터셋 중, '종목'열에 있는 문자열들을 숫자로 바꿔주는 Event_Labeling함수를 정의한다.
+![Picture2](./Pictures/eventlabeling.png)
+* 예측을 위해서, 데이터셋에 있는 것 중, 이전 예산 데이터를 뽑아와서, DataFrame으로 제작 후, Event_Labeling, 스케일링으로 데이터를 정리한다.그 후, Autogluon모델에 넣을 수 있도록, TabularDataset으로 재정의한다.
+![Picture3](./Pictures/DataScaling.png)
