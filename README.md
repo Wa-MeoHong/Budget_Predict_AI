@@ -25,7 +25,7 @@ Autogluon은 학습 시, Tabular데이터셋을 활용해야 한다.
 #### 2) 예측 프로그램을 실행
 * 이제 예측을 한 후, 예측값을 기준으로, 비율을 측정한 후, 총 예산에 맞게 재수정을 한 후, 반환하게 된다.
 * 이는 Anvil Web App에서 불러오는 함수이기 때문에 실제 파이썬 파일에서는 예측값을 보여주지는 않는다.
-![Picture4](./Pictures/DataScaling.png)
+![Picture4](./Pictures/DataPredict.png)
 #### 3) Anvil Web APP
 * 파이썬 실행 시, 나오는 Anvil Webpage URL을 들어가면 다음과 같은 화면을 볼 수 있다.
 ![Picture5](./Pictures/Webpage.png)
