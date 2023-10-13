@@ -24,6 +24,9 @@ import warnings
 from autogluon.tabular import TabularDataset, TabularPredictor
 from sklearn.preprocessing import StandardScaler
 import anvil.server
+import pathlib
+temp = pathlib.PosixPath
+pathlib.PosixPath = pathlib.WindowsPath
 
 warnings.filterwarnings(action='ignore')
 anvil.server.connect("server_QQ62KHHLTT3ZG237K7EG32EM-4IQLTPYPGEJZ5WKN")
