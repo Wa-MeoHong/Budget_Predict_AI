@@ -9,8 +9,9 @@
     No.  |    Date    |                Detail
  --------------------------------------------------------------
     1    |   10/12    |             first write
+    2    |   10/13    |   Add file directory route Tracking 
    ...   |    ...     |                 ....
-    2    |   10/12    |             final modify
+    3    |   10/13    |             final modify
  ==============================================================
 """
 
@@ -18,6 +19,7 @@ import pandas as pd
 import numpy as np
 import random
 import os
+import sys
 import warnings
 from autogluon.tabular import TabularDataset, TabularPredictor
 from sklearn.preprocessing import StandardScaler
@@ -26,8 +28,10 @@ import anvil.server
 warnings.filterwarnings(action='ignore')
 anvil.server.connect("server_QQ62KHHLTT3ZG237K7EG32EM-4IQLTPYPGEJZ5WKN")
 
+path = os.path.dirname(os.path.realpath(__file__))
+
 #데이터셋 로드 및 "Unnamed: 0"컬럼 삭제 (인덱스 컬럼)
-testsets = pd.read_csv("./testsets.csv", encoding='cp949')
+testsets = pd.read_csv(path+"/testsets.csv", encoding='cp949')
 testsets.drop(columns=['Unnamed: 0'], inplace=True)
 print("load dataset Success")
 
@@ -35,7 +39,7 @@ print("load dataset Success")
 predictor = TabularPredictor(
     label='2023년-전기', problem_type='regression',
     eval_metric = 'rmse'
-    ).load(path='./AutogluonModels/TESTMODEL1')
+    ).load(path=path+'/AutogluonModels/TESTMODEL1')
 print("load Success\n")
 
 # '종목' 문자열 레이블링 함수
